@@ -365,6 +365,14 @@ Refer to [this link](https://github.com/ET-Lang/ET/wiki) to start learning the l
 <!--Write more about the compiler-->
 <!--Steps-->
 <!--Building One from Source-->
+
+#### Building on OSX Big Sur M1  cpu
+
+- install llvm (brew install llvm) if you get LLVM_NOT_FOUND
+- run buildosxarm.sh (./buildosxarm.sh)
+- cd build
+- make
+
 <!--Hello World in One-->
 <!--Tips to understand the language better-->
 <!--Filename extensions: `.one`-->

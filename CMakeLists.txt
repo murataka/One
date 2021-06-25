@@ -1,17 +1,20 @@
 cmake_minimum_required(VERSION 3.19)
 set(CMAKE_C_STANDARD 11)
 project(One C CXX)
+option(USE_CLANG "build application with clang" ON) # OFF is the default
 
 set(CMAKE_C_COMPILER "gcc")
 set(CMAKE_CXX_COMPILER "g++")
 
+
 #enable_language(C++)
 
 
-#find_package(LLVM REQUIRED CONFIG)
-find_package(LLVM)
+find_package(LLVM REQUIRED CONFIG)
+#find_package(LLVM)
 message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
 message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
+
 
 include_directories(src)
 
@@ -19,7 +22,7 @@ include_directories(test)
 # enable_testing()
 # add_subdirectory(test)
 
-#include_directories(${LLVM_INCLUDE_DIRS})
+include_directories(${LLVM_INCLUDE_DIRS})
 include_directories(/usr/include)
 link_directories(/usr/lib)
 
